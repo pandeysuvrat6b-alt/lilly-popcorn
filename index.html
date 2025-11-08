@@ -275,5 +275,15 @@
       });
     });
   </script>
+  <script type="module">
+  import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+  const SUPABASE_URL = "https://your-project.supabase.co";
+  const SUPABASE_ANON_KEY = "your-anon-key";
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // your JavaScript that fetches products or stores orders...
+</script>
 </body>
 </html>

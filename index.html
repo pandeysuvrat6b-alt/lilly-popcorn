@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lilly Popcorn | Fresh & Crunchy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f8f3eb; /* cream */
+      color: #4b3a2f; /* brown */
+    }
+
+    header {
+      background-color: #c7a17a;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #e4cbb2;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #4b3a2f;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    section {
+      padding: 60px 15%;
+      text-align: center;
+    }
+
+    h2 {
+      color: #4b3a2f;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    p {
+      color: #5c4b40;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+    }
+
+    .price {
+      color: #c7a17a;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background-color: #4b3a2f;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #c7a17a;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-form input,
+    .contact-form textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #c7a17a;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    .contact-form button {
+      background-color: #4b3a2f;
+      color: #fff;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #c7a17a;
+    }
+
+    /* ===== CART ===== */
+    #cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4b3a2f;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #c7a17a;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Lilly Popcorn</header>
+
+  <div id="cart">🛒 Cart: <span id="cart-count">0</span></div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Shop</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Lilly Popcorn</h2>
+    <p>Fresh, crunchy, and made with love — Lilly Popcorn brings joy to every bite! Perfect for movie nights, parties, or anytime cravings.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Lilly Popcorn started with a passion for creating the perfect snack — fluffy popcorn coated in delicious, high-quality ingredients. Every pack is handcrafted to give you that fresh, warm, and irresistible flavor you’ll fall in love with.</p>
+  </section>
+
+  <section id="products">
+    <h2>Shop Our Flavors</h2>
+    <p>Try our best-selling gourmet popcorn varieties!</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x250?text=Caramel+Popcorn" alt="Caramel Popcorn">
+        <h3>Caramel Popcorn</h3>
+        <p class="price">$5</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x250?text=Cheese+Popcorn" alt="Cheese Popcorn">
+        <h3>Cheese Popcorn</h3>
+        <p class="price">$6</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x250?text=Butter+Popcorn" alt="Butter Popcorn">
+        <h3>Butter Popcorn</h3>
+        <p class="price">$4</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x250?text=Chocolate+Popcorn" alt="Chocolate Popcorn">
+        <h3>Chocolate Popcorn</h3>
+        <p class="price">$7</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x400?text=Lilly+Popcorn+1" alt="Popcorn 1">
+      <img src="https://via.placeholder.com/300x400?text=Lilly+Popcorn+2" alt="Popcorn 2">
+      <img src="https://via.placeholder.com/300x400?text=Lilly+Popcorn+3" alt="Popcorn 3">
+      <img src="https://via.placeholder.com/300x400?text=Lilly+Popcorn+4" alt="Popcorn 4">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Want to place a bulk order or have a question? Get in touch!</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea rows="4" placeholder="Your Message"></textarea><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Lilly Popcorn | Freshly Made with ❤️
+  </footer>
+
+  <script>
+    // Simple Add to Cart counter
+    const buttons = document.querySelectorAll('.add-to-cart');
+    const cartCount = document.getElementById('cart-count');
+    let count = 0;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        count++;
+        cartCount.textContent = count;
+        alert('Item added to cart!');
+      });
+    });
+  </script>
+</body>
+</html>
